@@ -1,0 +1,37 @@
+# Virtual environment
+venv/
+.env
+*.env
+
+# Bytecode do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configurações do IDE
+.vscode/
+.idea/
+*.iml
+
+# Logs e arquivos temporários
+logs/
+*.log
+*.out
+*.pid
+tmp/
+*.swp
+*.swo
+
+# Dependências e pacotes
+*.egg-info/
+dist/
+build/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Docker e Cache do Pytest (se aplicável)
+docker-compose.override.yml
+.pytest_cache/
