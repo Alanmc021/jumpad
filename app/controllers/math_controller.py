@@ -1,10 +1,22 @@
-from app.services.math_service import sum_numbers, calculate_average
-from app.models.numbers import Numbers
+from fastapi import HTTPException
+from app.services.math_service import MathService
+from app.models.numbers import MathRequest
 
-def handle_sum(numbers: Numbers):
-    result = sum_numbers(numbers.values)
-    return {"operation": "sum", "result": result}
+class MathController:
+    @staticmethod
+    def handle_sum(request: MathRequest):
+        if not request.numbers:
+            raise HTTPException(status_code=400, detail="List of numbers cannot be empty")
+        if any(not isinstance(num, (int, float)) for num in request.numbers):
+            raise HTTPException(status_code=400, detail="All values must be numbers")
 
-def handle_average(numbers: Numbers):
-    result = calculate_average(numbers.values)
-    return {"operation": "average", "result": result}
+        return {"operation": "sum", "result": MathService.sum_numbers(request.numbers)}
+
+    @staticmethod
+    def handle_average(request: MathRequest):
+        if not request.numbers:
+            raise HTTPException(status_code=400, detail="List of numbers cannot be empty")
+        if any(not isinstance(num, (int, float)) for num in request.numbers):
+            raise HTTPException(status_code=400, detail="All values must be numbers")
+
+        return {"operation": "average", "result": MathService.calculate_average(request.numbers)}

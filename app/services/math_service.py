@@ -1,9 +1,10 @@
 from typing import List
 
-def sum_numbers(values: List[int]) -> int:
-    return sum(values)
+class MathService:
+    @staticmethod
+    def sum_numbers(numbers: List[float]) -> float:
+        return sum(numbers)
 
-def calculate_average(values: List[int]) -> float:
-    if len(values) == 0:
-        return 0
-    return sum(values) / len(values)
+    @staticmethod
+    def calculate_average(numbers: List[float]) -> float:
+        return sum(numbers) / len(numbers) if numbers else 0
