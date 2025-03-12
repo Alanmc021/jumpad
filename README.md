@@ -2,6 +2,8 @@
 
 This repository contains a RESTful API developed with **FastAPI** for mathematical operations such as sum and average. The project is structured to ensure scalability, modular organization, and best development practices.
 
+🌐 **Production URL:** [https://jumpad.onrender.com](https://jumpad.onrender.com)
+
 ---
 
 ## 🚀 Technologies Used
@@ -139,4 +141,19 @@ If you wish to contribute to the project, follow these steps:
 
 ## 📌 License
 This project is under the MIT license. Feel free to use and modify it! 😃
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
